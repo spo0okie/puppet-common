@@ -27,18 +27,25 @@ class common::packages {
 				'lzo',
 				'lzo-devel',
 				'kernel-devel',
+				"kernel-devel-$kernelrelease",
 				'libpcap-devel',
 				'libpcap',
 				'make',
 				'psmisc',
 				'openssh',
+				'redhat-lsb-core',
+				'dpkg',
+				'smartmontools',
+				'openssl-devel', #для сборки сквида
+				'libecap-devel', #для сборки сквида
+				'libxml2-devel'  #для сборки сквида
 			]
 			case $::operatingsystemmajrelease {
 				7: {
 					$custom = [ $custom_cos,'man-db']
 				}
 				default: {
-					$custom = [ $custom_cos, 'man']
+					$custom = [ $custom_cos, 'man-pages']
 				}
 			}
 			$options = []
@@ -70,6 +77,7 @@ class common::packages {
 		'bash',
 		'gcc',
 		'automake',
+		'autoconf',
 		'unzip',
 		'wget',
 		'htop',
@@ -77,6 +85,7 @@ class common::packages {
 		'subversion',
 		'tcpdump',
 		'libtool',
+		'libtool-ltdl-devel',
 	]
 	
 	$total=[ $default, $custom ]
