@@ -18,7 +18,8 @@ class common::packages {
 			]
 			$options = ['--allow-unauthenticated', '-f']
 		}
-		'CentOS': {
+		'CentOS','RedHat': {
+			include repos::epel
 			$custom_cos = [
 				'gcc-c++',
 				'openssh-clients',
@@ -28,7 +29,6 @@ class common::packages {
 				'lzo-devel',
 				'kernel-devel',
 				"kernel-devel-$kernelrelease",
-				'libpcap-devel',
 				'libpcap',
 				'make',
 				'psmisc',
@@ -41,8 +41,11 @@ class common::packages {
 				'libxml2-devel'  #для сборки сквида
 			]
 			case $::operatingsystemmajrelease {
-				7: {
-					$custom = [ $custom_cos,'man-db']
+				'7': {
+					$custom = ['libpcap-devel',$custom_cos,'man-db']
+				}
+				'8': {
+					$custom = ['elfutils-libelf-devel',$custom_cos,'man-db']
 				}
 				default: {
 					$custom = [ $custom_cos, 'man-pages']
@@ -87,7 +90,6 @@ class common::packages {
 		'libtool',
 		'libtool-ltdl-devel',
 	]
-	
 	$total=[ $default, $custom ]
 	package { $total :
 		ensure => present,
