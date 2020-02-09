@@ -37,12 +37,12 @@ class common::packages {
 				'dpkg',
 				'smartmontools',
 				'openssl-devel', #для сборки сквида
-				'libecap-devel', #для сборки сквида
+				#'libecap-devel', #для сборки сквида
 				'libxml2-devel'  #для сборки сквида
 			]
 			case $::operatingsystemmajrelease {
 				'7': {
-					$custom = ['libpcap-devel',$custom_cos,'man-db']
+					$custom = ['libecap-devel',$custom_cos,'man-db']
 				}
 				'8': {
 					$custom = ['elfutils-libelf-devel',$custom_cos,'man-db']
