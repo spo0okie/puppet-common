@@ -53,28 +53,6 @@ class common::packages {
 			}
 			$options = []
 		}
-		'OpenSuSE': {
-			$custom = [
-				'gcc-c++',
-				'openssh',
-#				'ncurses',
-				'ncurses-devel',
-				'liblzo2-2',
-				'lzo-devel',
-				'kernel-devel',
-				'libpcap-devel',
-				'libpcap1',
-				'man',
-				'make',
-			]
-			$options = []
-		}
-		'FreeBSD': {
-			$custom = [
-				'sudo',
-			]
-			$options = []
-		}
 	}
 	$default = [
 		'bash',
