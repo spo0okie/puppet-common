@@ -48,7 +48,7 @@ class common::packages {
 					$custom = ['elfutils-libelf-devel',$custom_cos,'man-db']
 				}
 				default: {
-					$custom = [ $custom_cos, 'man-pages']
+					$custom = ['libtool-ltdl-devel', $custom_cos, 'man-pages']
 				}
 			}
 			$options = []
@@ -66,7 +66,7 @@ class common::packages {
 		'subversion',
 		'tcpdump',
 		'libtool',
-		'libtool-ltdl-devel',
+		
 	]
 	$total=[ $default, $custom ]
 	package { $total :
