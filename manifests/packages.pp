@@ -1,6 +1,8 @@
+#libtoolize - нужен для сборки сквида
 class common::packages {
 	case $::operatingsystem {
 		'Debian','Ubuntu': {
+			$libtoolize='libtool'
 			$custom = [
 				'g++',
 				'openssh-client',
@@ -48,7 +50,8 @@ class common::packages {
 					$custom = ['elfutils-libelf-devel',$custom_cos,'man-db']
 				}
 				default: {
-					$custom = ['libtool-ltdl-devel', $custom_cos, 'man-pages']
+					$libtoolize='libtool-ltdl-devel'
+					$custom = [$libtoolize, $custom_cos, 'man-pages']
 				}
 			}
 			$options = []
