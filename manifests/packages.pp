@@ -14,9 +14,12 @@ class common::packages {
 				'libpcap-dev',
 				'libpcap0.8',
 				'libpcap0.8-dev',
+				'libusb-dev',	#>asterisk::dahdi
 				'man',
 				'make',
-				'ssh'
+				'ssh',
+				'smartmontools',
+				'libxml2-dev',  #>asterisk,squid
 			]
 			$options = ['--allow-unauthenticated', '-f']
 		}
