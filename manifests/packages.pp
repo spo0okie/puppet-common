@@ -72,8 +72,7 @@ class common::packages {
 		'subversion',
 		'tcpdump',
 		'libtool',
-		'curl',
-		'rsync'
+		
 	]
 	$total=[ $default, $custom ]
 	package { $total :
