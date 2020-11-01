@@ -2,6 +2,7 @@
 class common::packages {
 	case $::operatingsystem {
 		'Debian','Ubuntu': {
+			$kernel_devel="linux-headers-$kernelrelease"
 			$libtoolize='libtool'
 			$custom = [
 				'g++',
@@ -10,7 +11,7 @@ class common::packages {
 				'ncurses-dev',
 				'liblzo2-2',
 				'liblzo2-dev',
-				"linux-headers-$kernelrelease",
+				$kernel_devel,
 				'libpcap-dev',
 				'libpcap0.8',
 				'libpcap0.8-dev',
@@ -25,6 +26,7 @@ class common::packages {
 		}
 		'CentOS','RedHat': {
 			include repos::epel
+			$kernel_devel="kernel-devel-$kernelrelease"
 			$custom_cos = [
 				'gcc-c++',
 				'openssh-clients',
@@ -33,7 +35,7 @@ class common::packages {
 				'lzo',
 				'lzo-devel',
 				'kernel-devel',
-				"kernel-devel-$kernelrelease",
+				$kernel_devel,
 				'libpcap',
 				'make',
 				'psmisc',
