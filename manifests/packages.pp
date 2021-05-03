@@ -12,6 +12,8 @@ class common::packages {
 				'liblzo2-2',
 				'liblzo2-dev',
 				$kernel_devel,
+				'libssl-dev',	#voipmonitor
+				'libgcrypt20-dev',	#voipmonitor
 				'libpcap-dev',
 				'libpcap0.8',
 				'libpcap0.8-dev',
