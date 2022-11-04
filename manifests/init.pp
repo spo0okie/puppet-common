@@ -7,9 +7,9 @@ class common {
     }
     'CentOS','RedHat': {
       include common::selinux_disable
-      include common::ncurses_utf_fix
     }
   }
+  include common::ncurses_utf_fix
   include rsyslog
   include tmux
   include common::packages
