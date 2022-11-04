@@ -1,4 +1,7 @@
 class common {
+  file {'/usr/local/etc':
+    ensure => directory,
+  }
   case $::operatingsystem {
     'Debian','Ubuntu': {
     }
