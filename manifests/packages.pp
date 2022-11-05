@@ -8,7 +8,7 @@ class common::packages {
 				'g++',
 				'openssh-client',
 				'ncurses-base',
-				'ncurses-dev',
+				'libncurses5-dev',
 				'liblzo2-2',
 				'liblzo2-dev',
 				$kernel_devel,
@@ -24,6 +24,7 @@ class common::packages {
 				'smartmontools',
 				'libxml2-dev',  #>asterisk,squid
 				'sudo',
+				'psmisc',		#killall
 			]
 			$options = ['--allow-unauthenticated', '-f']
 		}
@@ -72,6 +73,7 @@ class common::packages {
 		'autoconf',
 		'unzip',
 		'wget',
+		'curl',
 		'htop',
 		'git',
 		'subversion',
