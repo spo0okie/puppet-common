@@ -23,6 +23,7 @@ class common::packages {
 				'ssh',
 				'smartmontools',
 				'libxml2-dev',  #>asterisk,squid
+				'sudo',
 			]
 			$options = ['--allow-unauthenticated', '-f']
 		}
