@@ -23,8 +23,9 @@ class common::packages {
 				'ssh',
 				'smartmontools',
 				'libxml2-dev',  #>asterisk,squid
-				'sudo',
+				#'sudo',		#declared in sudoers module
 				'psmisc',		#killall
+				'dmidecode',	#как без него. инвентори работать не будет
 			]
 			$options = ['--allow-unauthenticated', '-f']
 		}
